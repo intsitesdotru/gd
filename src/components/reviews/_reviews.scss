@@ -1,0 +1,147 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/mixins';
+
+.reviews__slider-wrap {
+  padding-bottom: 35px;
+}
+
+.reviews__slider {
+  position: relative;
+  margin-bottom: 45px;
+
+  .swiper-container {
+    position: static;
+    width: 88%;
+
+    @media (max-width: $screen-xs) {
+      width: 100%;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-pagination {
+    bottom: -50px;
+
+    @media (max-width: $screen-md) {
+      bottom: -33px;
+    }
+  }
+
+  @media (min-width: $screen-xs) and (max-width: ($screen-lg - 1)) {
+    margin-bottom: calcFluidSize(7px, 45px);
+  }
+
+  @media (max-width: $screen-xs) {
+    margin-bottom: 7px;
+  }
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+
+  &__info {
+    position: relative;
+    width: 77%;
+    color: white;
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      display: flex;
+      width: 0;
+      height: 0;
+      content: '';
+      background-color: transparent;
+      border-width: 122px;
+      border-style: solid;
+      border-color: $brand-secondary transparent transparent $brand-secondary;
+
+      @media (max-width: $screen-xs) {
+        border-width: 63px;
+      }
+    }
+
+    &__content {
+      padding: 4% 4% 3%;
+      display: flex;
+      box-sizing: border-box;
+      width: 80%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $brand-secondary;
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    display: inline-block;
+    overflow: hidden;
+    max-height: 96px;
+    text-overflow: ellipsis;
+
+    @media (max-width: 1200px) {
+      max-height: 120px;
+      font-size: 14px;
+      line-height: 15px;
+    }
+  }
+
+  &__signature {
+    text-align: right;
+
+    &__name {
+      font-size: 14px;
+      //line-height: 1.142857114;
+      font-weight: 700;
+    }
+
+    &__rank {
+      display: inline-block;
+      width: 39%;
+      font-size: 12px;
+      line-height: 1.33333333;
+      font-weight: 300;
+
+      @media (max-width: 1200px) {
+        width: auto;
+      }
+    }
+  }
+
+  &__image-wrap {
+    max-width: 21%;
+  }
+
+  &__image {
+    display: block;
+  }
+}
+
+.reviews-footer-text {
+  margin-bottom: 35px;
+  display: inline-block;
+  line-height: 1.13333;
+  font-weight: 700;
+
+  @include fluidFontSize(15px, 35px);
+
+  @media (min-width: ($screen-xs + 1)) and (max-width: ($screen-lg - 1)) {
+    margin-bottom: calcFluidSize(13px, 35px);
+  }
+
+  @media (max-width: $screen-xs) {
+    margin-bottom: 13px;
+  }
+}

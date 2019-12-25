@@ -1,1 +1,36 @@
-$bg-body: cyan;
+$bg-body: white;
+$bg-gray: #f7f7f7;
+$text-color: black;
+$header-color: black;
+$brand-primary: #978555;
+$bg-primary: $brand-primary;
+$brand-secondary: black;
+
+$font-family: 'HelveticaNeueCyr', sans-serif;
+$font-family-h: 'Gilroy-ExtraBold', sans-serif;
+$font-family-icons: 'swiper-icons';
+
+$font-size-h: 50px;
+$font-size-h-small: 26px;
+$font-size-h-xs: 20px;
+$font-size-h-xs-small: 13px;
+$line-height-h: 1.08;
+$font-size-p: 25px;
+$font-size-p-xs: 14px;
+
+$padding-x: 10px;
+$padding-x-lg: 15px;
+
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-note-15: 1366px !default;
+$screen-lg: 1440px !default;
+
+$container-width: 100%;
+$container-width-lg: $screen-lg;
+
+$transition: all .3s ease-in;
+
+$slider-btn-size: 64px;
+$slider-btn-size-xs: 26px;

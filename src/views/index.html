@@ -1,19 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Index</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Index</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="section-head-wrap">
+        <div class="bg-gray bg-add-after">
+          <section class="section-head">
+            <div class="container">
+              @@include("../components/head/head.html")
+            </div>
 
-  @@include("../components/header/header.html")
-  
+            <div class="container">
+              @@include("../components/banner/banner.html")
+            </div>
+          </section>
+        </div>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}"
-          crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
-  
-  <script type="text/javascript" src="js/scripts.js"></script>
-</body>
+      <section class="section-check-version">
+        <div class="container">
+          <h2 class="section__header">Выберите свою версию журнала</h2>
+        </div>
+
+        @@include("../components/choose-version/choose-version.html")
+      </section>
+
+      <section class="section-reviews bg-primary">
+        <div class="container">
+          <h2 class="section__header">Что дает подписка на журнал «Генеральный Директор»</h2>
+
+          @@include("../components/reviews/reviews.html")
+        </div>
+      </section>
+
+      <section class="section-services">
+        <div class="container">
+          <h3 class="section__header">
+            17 профессиональных сервисов для решения ваших ежедневных задач
+            <small class="section__header--small">Для подписчиков бесплатно</small>
+          </h3>
+
+          @@include("../components/services/services.html")
+        </div>
+      </section>
+
+      <div class="container">
+        <hr />
+      </div>
+
+      <section class="section-photo">
+        <div class="container">
+          <h3 class="section__header">
+            Участие в ежегодных закрытых бизнес-форумах. Более 400 руководителей в одном месте
+            <small class="section__header--small">Только для подписчиков</small>
+          </h3>
+
+          <h4 class="title">Как это было <mark>2018</mark></h4>
+
+          <p>
+            28 сентября — <b>День Генерального Директора</b>, Ваш профессиональный праздник.<br />
+            Взгляните, как это было в прошлом году.
+          </p>
+
+          @@include("../components/photos/photos.html")
+
+          <hr class="invert" />
+        </div>
+      </section>
+
+      <section class="section-guarantees">
+        <div class="container">
+          <h3 class="section__header">
+            100% гарантия
+            <small class="section__header--small"
+              >Роста Вашей компании минимум на 35% в течение года при использовании хотя бы 1-2 идей
+              из журнала в месяц</small
+            >
+          </h3>
+
+          @@include("../components/guarantees/guarantees.html")
+        </div>
+      </section>
+
+      <div class="speech-wrap">
+        <div class="bg-gray bg-add-before">
+          @@include("../components/speech-gd/speech-gd.html")
+        </div>
+      </div>
+
+      @@include("../components/footer/footer.html")
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"
+      integrity="{{JQUERY_SRI_HASH}}"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>');
+    </script>
+
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.12/dist/js/lightgallery.min.js"></script>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
 </html>

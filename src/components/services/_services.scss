@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.services__slider {
+  position: relative;
+  margin-bottom: 110px;
+
+  @media (min-width: ($screen-xs + 1)) and (max-width: ($screen-lg - 1)) {
+    margin-bottom: calcFluidSize(47px, 110px);
+  }
+
+  @media (max-width: $screen-xs) {
+    margin-bottom: 47px;
+  }
+
+  .swiper-container {
+    position: static;
+    width: 88%;
+
+    @media (max-width: $screen-xs) {
+      width: 100%;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-pagination {
+    bottom: -55px;
+
+    @media (max-width: $screen-xs) {
+      bottom: -35px;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/mixins';
+
+.footer {
+  padding-top: 19px;
+  padding-bottom: 18px;
+  background-color: $brand-primary;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $screen-xs) {
+      display: block;
+    }
+  }
+
+  &__logo {
+    width: calcFluidSize(94px, 132px);
+
+    @media (max-width: $screen-xs) {
+      width: 94px;
+    }
+  }
+}
+
+.socials {
+  @include list-unstyled();
+
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  @media (max-width: $screen-xs) {
+    margin-top: 0;
+    float: right;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-image: url('../images/icons-socials.png');
+    background-size: cover;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    @media (max-width: $screen-xs) {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__youtube {
+      background-position: -52px 0;
+
+      @media (max-width: $screen-xs) {
+        background-position: -37px 0;
+      }
+    }
+
+    &__vk {
+      background-position: -104px 0;
+
+      @media (max-width: $screen-xs) {
+        background-position: -74px 0;
+      }
+    }
+
+    a {
+      @include text-hide();
+
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.address {
+  @include fluidFontSize(13px, 25px);
+
+  line-height: 1.297;
+  font-weight: 500;
+  text-align: right;
+
+  @media (max-width: $screen-xs) {
+    margin-top: -10px;
+  }
+
+  &__phone {
+    font-weight: 700;
+  }
+
+  &__email {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: $brand-secondary;
+    }
+  }
+}

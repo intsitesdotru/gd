@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/mixins';
+
+.panels {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $screen-xs) {
+    flex-direction: column;
+  }
+}
+
+.panel {
+  margin-top: -7px;
+  margin-bottom: 22px;
+  padding: 4.4% 10px 4% 4%;
+  display: flex;
+  box-sizing: border-box;
+  width: 48.8%;
+  justify-content: space-between;
+  border: 1px solid $brand-primary;
+  border-radius: 10px;
+  box-shadow: 1px 1px 9px 0 rgba(0, 0, 0, .07);
+
+  &__image {
+    margin-right: 7%;
+    // width: calcFluidSize(35px, 76px, $screen-xs, $screen-lg);
+    width: 32%;
+    min-width: 35px;
+    max-width: 76px;
+    align-self: flex-start;
+
+    @media (max-width: $screen-xs) {
+      max-width: 35px;
+    }
+  }
+
+  &__title {
+    margin-bottom: calcFluidSize(12px, 18px);
+    display: inline-block;
+    line-height: 1.3333;
+    font-weight: 700;
+    border-bottom: 3px solid $brand-primary;
+
+    @include fluidFontSize(20px, 41px, $screen-xs, $screen-lg);
+  }
+
+  &__text {
+    @include fluidFontSize(14px, 24px, $screen-xs, $screen-lg);
+
+    @media (max-width: $screen-xs) {
+      line-height: 1.21428;
+    }
+  }
+
+  &--secondary {
+    color: white;
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
+  }
+
+  @media (max-width: $screen-xs) {
+    padding-left: 25px;
+    width: 100%;
+    border-radius: 25px;
+  }
+}

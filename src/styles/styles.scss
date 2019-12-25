@@ -1,5 +1,20 @@
+@import 'node_modules/normalize.css/normalize';
+@import 'bootstrap-custom/bootstrap-custom';
 @import 'variables';
-
-body {
-  background-color: $bg-body;
-}
+@import 'functions';
+@import 'mixins';
+@import 'helpers';
+@import 'common';
+@import 'swiper-custom';
+@import 'lightgallery_custom';
+@import 'sections';
+@import 'section__header';
+@import '../components/head/head';
+@import '../components/banner/banner';
+@import '../components/choose-version/choose-version';
+@import '../components/services/services';
+@import '../components/reviews/reviews';
+@import '../components/photos/photos';
+@import '../components/guarantees/guarantees';
+@import '../components/footer/footer';
+@import '../components/speech-gd/speech-gd';

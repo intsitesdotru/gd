@@ -1,0 +1,76 @@
+@import 'variables';
+$backdrop-opacity: .6;
+$lg-border-radius-base: 50%;
+$lg-path-images: '../images';
+
+// basic icon colours
+$lg-icon-bg: transparent;
+$lg-icon-color: white;
+$lg-icon-hover-color: white;
+
+// Core variables and mixins
+@import 'node_modules/lightgallery/src/sass/lg-variables';
+@import 'node_modules/lightgallery/src/sass/lg-mixins';
+//@import 'node_modules/lightgallery/src/sass/lg-fonts';
+@import 'node_modules/lightgallery/src/sass/lg-theme-default';
+//@import 'lg-thumbnail';
+//@import 'lg-video';
+//@import 'lg-autoplay';
+//@import 'lg-zoom';
+//@import 'lg-pager';
+//@import 'lg-fullscreen';
+//@import 'lg-share';
+
+// Core
+@import 'node_modules/lightgallery/src/sass/lg-core';
+
+// added
+.lg-on > .page {
+  filter: blur(5px);
+}
+
+.lg-actions .lg-icon {
+  margin-top: 0;
+  //border: 1px solid white;
+  padding: 0;
+  box-sizing: border-box;
+  width: $slider-btn-size;
+  height: $slider-btn-size;
+  outline: none;
+  transform: translateY(-50%);
+
+  &::before,
+  &::after {
+    font-family: $font-family-icons;
+    font-size: 36px;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  &.lg-prev::after {
+    content: 'prev';
+  }
+
+  &.lg-next::before {
+    content: 'next';
+  }
+
+  @include transition();
+
+  @media (min-width: ($screen-xs + 1)) and (max-width: ($screen-lg - 1)) {
+    width: calcFluidSize($slider-btn-size-xs, $slider-btn-size, $screen-xs, $screen-lg);
+    height: calcFluidSize($slider-btn-size-xs, $slider-btn-size, $screen-xs, $screen-lg);
+  }
+
+  @media (max-width: $screen-xs) {
+    display: none;
+  }
+}
+
+.lg-toolbar .lg-close::after {
+  content: url('../images/close.svg');
+}

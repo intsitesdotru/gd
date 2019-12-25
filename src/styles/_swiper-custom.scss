@@ -1,0 +1,79 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+@import 'node_modules/swiper/swiper';
+@import 'node_modules/swiper/components/navigation/navigation';
+@import 'node_modules/swiper/components/pagination/pagination';
+@import 'node_modules/swiper/components/lazy/lazy';
+
+:root {
+  --swiper-theme-color: black;
+  --swiper-navigation-size: 36px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @include transition();
+
+  margin-top: 0;
+  box-sizing: border-box;
+  width: $slider-btn-size;
+  height: $slider-btn-size;
+  border: 1px solid $brand-secondary;
+  border-radius: 50%;
+  outline: none;
+  transform: translateY(-50%);
+
+  @media (min-width: ($screen-xs + 1)) and (max-width: ($screen-lg - 1)) {
+    width: calcFluidSize($slider-btn-size-xs, $slider-btn-size, $screen-xs, $screen-lg);
+    height: calcFluidSize($slider-btn-size-xs, $slider-btn-size, $screen-xs, $screen-lg);
+  }
+
+  @media (max-width: $screen-xs) {
+    display: none;
+    //width: $slider-btn-size-xs;
+    //height: $slider-btn-size-xs;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  .bg-primary & {
+    &:hover {
+      color: white;
+      background-color: $brand-secondary;
+      border-color: $brand-secondary;
+    }
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @include fluidFontSize(16px, 36px, $screen-xs, $screen-lg);
+}
+
+// pagination
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: transparent;
+  border: 1px solid $brand-secondary;
+
+  @media (max-width: $screen-xs) {
+    width: 9px;
+    height: 9px;
+  }
+
+  &-active {
+    background-color: $brand-primary;
+    border-color: transparent;
+
+    .bg-primary & {
+      background-color: $brand-secondary;
+    }
+  }
+}

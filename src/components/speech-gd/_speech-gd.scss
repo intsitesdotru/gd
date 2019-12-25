@@ -1,0 +1,151 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/mixins';
+
+.speech-wrap {
+  margin-top: 120px;
+
+  @media (min-width: ($screen-xs + 1)) and (max-width: ($screen-lg - 1)) {
+    margin-top: calcFluidSize(25px, 120px);
+  }
+
+  @media (max-width: $screen-xs) {
+    margin-top: 25px;
+  }
+
+  &__container {
+    @media (min-width: ($screen-xs + 1)) {
+      @include container;
+    }
+  }
+}
+
+.speech {
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  display: flex;
+  width: 82%;
+
+  @media (min-width: ($screen-xs + 1)) and (max-width: $screen-md) {
+    padding-top: calcFluidSize(25px, 60px);
+    padding-bottom: calcFluidSize(3px, 50px);
+  }
+
+  @media (max-width: $screen-xs) {
+    padding-top: 25px;
+    padding-bottom: 3px;
+  }
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+  }
+
+  &__image-lg {
+    width: 100%;
+    min-width: 135px;
+    max-width: 253px;
+
+    @media (max-width: $screen-xs) {
+      display: none;
+    }
+  }
+
+  &__info--prepend {
+    margin-top: 55px;
+    display: flex;
+    min-width: 35px;
+    height: 50px;
+    background-color: $brand-secondary;
+
+    @media (min-width: ($screen-xs + 1)) and (max-width: $screen-md) {
+      margin-top: 25px;
+      min-width: 20px;
+    }
+
+    @media (max-width: $screen-xs) {
+      margin-top: 11px;
+      height: 29px;
+    }
+  }
+
+  &__info {
+    margin-top: 30px;
+
+    @media (max-width: $screen-md) {
+      margin-top: 0;
+    }
+  }
+
+  &__body {
+    padding: 5% 1% 4% 4%;
+    font-size: 16px;
+    color: white;
+    background-color: $brand-secondary;
+
+    @media (max-width: $screen-md) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $screen-xs) {
+      padding: 28px 6px 23px 18px;
+      line-height: 1.21428;
+    }
+  }
+
+  &__footer {
+    @media (max-width: $screen-xs) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__signature {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+
+    @media (max-width: $screen-xs) {
+      flex-direction: column;
+    }
+
+    &__scan {
+      margin-top: 14px;
+
+      @media (max-width: $screen-sm) {
+        max-width: 99px;
+      }
+
+      @media (max-width: $screen-xs) {
+        order: 1;
+        align-self: flex-end;
+      }
+    }
+
+    &__name {
+      margin-top: 18px;
+      margin-bottom: 3px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    &__rank {
+      font-size: 12px;
+      line-height: 1.3333;
+      font-weight: 300;
+
+      @media (max-width: $screen-sm) {
+        line-height: 1.25;
+      }
+    }
+  }
+
+  &__image-xs {
+    margin: 18px 10px 0 20px;
+    width: 97px;
+
+    @media (min-width: ($screen-xs + 1)) {
+      display: none;
+    }
+  }
+}

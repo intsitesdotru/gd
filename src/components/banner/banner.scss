@@ -1,0 +1,128 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/mixins';
+
+.banner {
+  position: relative;
+  padding: 80px 0 50px 50px;
+
+  @media (min-width: $screen-xs) and (max-width: ($screen-lg - 1)) {
+    padding: calcFluidSize(22px, 80px, $screen-xs, $screen-lg) 0
+      calcFluidSize(22px, 50px, $screen-xs, $screen-lg)
+      calcFluidSize(0, 50px, $screen-xs, $screen-lg);
+  }
+
+  @media (max-width: ($screen-xs - 1)) {
+    padding: 22px 0;
+  }
+
+  &__title {
+    @include fluidFontSize(21px, $font-size-h, $screen-xs, $screen-lg);
+
+    margin: 0 0 23px;
+    font-family: $font-family-h;
+    line-height: $line-height-h;
+    font-weight: bold;
+
+    @media (max-width: ($screen-xs - 1)) {
+      margin-bottom: 14px;
+    }
+
+    &--marked {
+      padding: 6px 20px;
+      display: inline-block;
+      color: white;
+      background-color: $brand-primary;
+
+      @media (min-width: $screen-xs) and (max-width: ($screen-lg - 1)) {
+        padding: calcFluidSize(3px, 6px, $screen-xs, $screen-lg)
+          calcFluidSize(6px, 20px, $screen-xs, $screen-lg);
+      }
+
+      @media (max-width: ($screen-xs - 1)) {
+        padding: 2px 6px 3px;
+      }
+    }
+  }
+
+  &__description {
+    @include fluidFontSize(14px, 25px, $screen-xs, $screen-lg);
+
+    margin-bottom: 28px;
+    line-height: 1.4;
+
+    @media (max-width: ($screen-xs - 1)) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__button {
+    $padding-y: 21px;
+    $padding-x: 57px;
+    $padding-y-xs: 10px;
+    $padding-x-xs: 35px;
+
+    @include fluidFontSize(16px, 25px, $screen-xs, $screen-lg);
+
+    margin-bottom: 14px;
+    padding: $padding-y $padding-x;
+    display: inline-block;
+    line-height: 1.4;
+    font-weight: 500;
+    text-decoration: none;
+    color: $brand-secondary;
+    border: 1px solid $brand-primary;
+
+    &:hover {
+      color: white;
+      background-color: $brand-secondary;
+      border-color: $brand-secondary;
+    }
+
+    @media (min-width: $screen-xs) and (max-width: ($screen-lg - 1)) {
+      padding: calcFluidSize($padding-y-xs, $padding-y, $screen-xs, $screen-lg)
+        calcFluidSize($padding-x-xs, $padding-x, $screen-xs, $screen-lg);
+    }
+
+    @media (max-width: ($screen-xs - 1)) {
+      margin-bottom: 7px;
+      padding: $padding-y-xs $padding-x-xs;
+    }
+  }
+
+  &__link {
+    @include fluidFontSize(16px, 25px, $screen-xs, $screen-lg);
+
+    line-height: 1.4;
+    font-weight: 700;
+    text-decoration: none;
+    color: $brand-secondary;
+    border-bottom: 1px solid $brand-secondary;
+
+    &:hover {
+      color: $brand-primary;
+      border-color: $brand-primary;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 33px;
+    right: -10%;
+    width: 62%;
+    height: 100%;
+    background-image: url('../images/bg-banner.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+
+    @media (max-width: ($screen-xs - 1)) {
+      top: 60px;
+      right: auto;
+      left: 64%;
+      width: 167px;
+      height: 201px;
+      background-image: url('../images/bg-banner-xs.png');
+    }
+  }
+}

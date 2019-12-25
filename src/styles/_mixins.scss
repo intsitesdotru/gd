@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'functions';
+
+@mixin container() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  box-sizing: border-box;
+  width: $container-width;
+
+  @media (min-width: $screen-note-15) {
+    padding-right: $padding-x-lg;
+    padding-left: $padding-x-lg;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: $container-width-lg;
+  }
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min: $screen-xs, $w-max: $screen-lg, $fallback: false) {
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+
+    font-size: calcFluidSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}

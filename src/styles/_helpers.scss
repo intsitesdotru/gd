@@ -1,0 +1,39 @@
+@import 'variables';
+
+.hide-lg {
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
+}
+
+.hide-note-15 {
+  @media (min-width: $screen-note-15) {
+    display: none;
+  }
+}
+
+//.hide-min-lg {
+//  @media (max-width: ($screen-lg - 1)) {
+//    display: none;
+//  }
+//}
+
+.show-lg {
+  @media (min-width: $screen-lg) {
+    display: inline-block;
+  }
+
+  @media (max-width: ($screen-lg - 1)) {
+    display: none;
+  }
+}
+
+.show-note-15 {
+  @media (min-width: $screen-note-15) {
+    display: inline-block;
+  }
+
+  @media (max-width: ($screen-note-15 - 1)) {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.header {
+  padding-top: 37px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $screen-md) {
+    padding-top: 20px;
+  }
+
+  &__logo {
+    width: 139px;
+    height: 65px;
+
+    @media (max-width: $screen-xs) {
+      width: 82px;
+      height: 37px;
+    }
+  }
+
+  &__phone {
+    font-size: 26px;
+    font-weight: 700;
+    color: $text-color;
+
+    @media (max-width: $screen-xs) {
+      font-size: 14px;
+    }
+  }
+}
