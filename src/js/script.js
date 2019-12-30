@@ -27,6 +27,10 @@ $(() => {
   const reviewsSwiper = new Swiper('.reviews__slider > .swiper-container', {
     slidesPerView: 1,
     spaceBetween: 20,
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -41,6 +45,12 @@ $(() => {
   const photosSwiper = new Swiper('.photos', {
     slidesPerView: 'auto',
     spaceBetween: 6,
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 10,
+      loadOnTransitionStart: true,
+    },
     breakpoints: {
       1025: {
         spaceBetween: 17,

@@ -71,16 +71,20 @@
     "gulp-load-plugins": "^2.0.1",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
+    "gulp-responsive": "^3.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
     "husky": "^3.1.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "imagemin-zopfli": "^6.0.0",
     "lint-staged": "^9.4.3",
+    "postcss-uncss": "^0.17.0",
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
     "require-dir": "^1.2.0",
@@ -113,6 +117,7 @@
     "jquery": "^3.4.1",
     "lightgallery": "^1.6.12",
     "normalize.css": "^8.0.1",
-    "swiper": "^5.2.1"
+    "swiper": "^5.2.1",
+    "uncss": "^0.17.2"
   }
 }
